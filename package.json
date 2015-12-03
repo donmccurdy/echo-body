@@ -1,8 +1,11 @@
 {
   "name": "echo-body",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Listens on specified port and echos request bodies.",
-  "main": "echo.js",
+  "main": "echo-body.js",
+  "bin": {
+    "echo-body": "echo-body.js"
+  },
   "dependencies": {
     "chalk": "^1.1.1",
     "commander": "^2.9.0",
