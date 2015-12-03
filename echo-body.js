@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var koa = require('koa'),
 	bodyParser = require('koa-body'),
 	program = require('commander'),
