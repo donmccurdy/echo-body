@@ -7,9 +7,9 @@ var koa = require('koa'),
 
 // Bind CLI interface.
 program
-	.version('1.0.2')
+	.version('1.0.3')
 	.description('Listens on specified port and echos request bodies.')
-	.option('-p, --port', 'Port')
+	.option('-p, --port', 'Port', Number)
 	.parse(process.argv);
 
 // Default to port 4000.
