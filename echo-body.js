@@ -7,7 +7,7 @@ var koa = require('koa'),
 
 // Bind CLI interface.
 program
-	.version('1.0.1')
+	.version('1.0.2')
 	.description('Listens on specified port and echos request bodies.')
 	.option('-p, --port', 'Port')
 	.parse(process.argv);
