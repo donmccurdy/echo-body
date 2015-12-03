@@ -1,0 +1,25 @@
+{
+  "name": "echo-body",
+  "version": "1.0.0",
+  "description": "Listens on specified port and echos request bodies.",
+  "main": "echo.js",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "koa": "^1.1.2",
+    "koa-body": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "echo",
+    "http",
+    "request",
+    "server",
+    "debug"
+  ],
+  "author": "Don McCurdy <dm@donmccurdy.com>",
+  "license": "MIT"
+}
