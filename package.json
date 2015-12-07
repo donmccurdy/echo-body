@@ -1,6 +1,6 @@
 {
   "name": "echo-body",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Listens on specified port and echos request bodies.",
   "main": "echo-body.js",
   "bin": {
