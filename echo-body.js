@@ -7,13 +7,13 @@ var koa = require('koa'),
 
 // Bind CLI interface.
 program
-	.version('1.0.4')
+	.version('1.1.0')
 	.description('Listens on specified port and echos request bodies.')
 	.option('-p, --port', 'Port', Number)
 	.parse(process.argv);
 
 // Default to port 4000.
-program.port = program.port || 4000;
+program.port = program.port || process.env.PORT || 4000;
 
 // Launch echo server.
 koa()
