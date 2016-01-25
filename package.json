@@ -1,7 +1,13 @@
 {
   "name": "echo-body",
   "version": "1.1.0",
+  "author": "Don McCurdy <dm@donmccurdy.com>",
   "description": "Listens on specified port and echos request bodies.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donmccurdy/echo-body.git"
+  },
   "main": "echo-body.js",
   "bin": {
     "echo-body": "echo-body.js"
@@ -14,7 +20,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node echo-body.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "echo",
@@ -23,6 +31,7 @@
     "server",
     "debug"
   ],
-  "author": "Don McCurdy <dm@donmccurdy.com>",
-  "license": "MIT"
+  "engines": {
+    "node": ">=4.0.0"
+  }
 }
