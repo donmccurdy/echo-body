@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 
-var koa = require('koa'),
+var pkg = require('./package.json'),
+	koa = require('koa'),
 	bodyParser = require('koa-body'),
 	program = require('commander'),
 	chalk = require('chalk');
 
 // Bind CLI interface.
 program
-	.version('1.1.0')
-	.description('Listens on specified port and echos request bodies.')
+	.version(pkg.version)
+	.description(pkg.description)
 	.option('-p, --port', 'Port', Number)
 	.parse(process.argv);
 
