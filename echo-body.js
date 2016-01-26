@@ -10,11 +10,8 @@ var pkg = require('./package.json'),
 program
 	.version(pkg.version)
 	.description(pkg.description)
-	.option('-p, --port', 'Port', Number)
+	.option('-p, --port', 'Port', Number, process.env.PORT || 4000)
 	.parse(process.argv);
-
-// Default to port 4000.
-program.port = program.port || process.env.PORT || 4000;
 
 // Launch echo server.
 koa()
