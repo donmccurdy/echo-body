@@ -10,7 +10,7 @@ var pkg = require('./package.json'),
 program
 	.version(pkg.version)
 	.description(pkg.description)
-	.option('-p, --port', 'Port', Number, process.env.PORT || 4000)
+	.option('-p, --port <port>', 'Port', Number, process.env.PORT || 4000)
 	.parse(process.argv);
 
 // Launch echo server.
