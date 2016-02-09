@@ -17,8 +17,10 @@ program
 koa()
 	.use(bodyParser({multipart: true}))
 	.use(function *() {
+		var contentType = ['json', 'urlencoded', 'text'].filter((type) => this.is(type))[0] || '?';
 		console.log(chalk.green('Request to %s'), this.request.header.host + this.request.url);
 		console.log(chalk.yellow(' - Method: ') + this.request.method);
+		console.log(chalk.yellow(' - Content-Type: ') + contentType);
 		console.log(chalk.yellow(' - Body: ') + JSON.stringify(this.request.body, null, 2));
 		this.status = 200;
 	})
