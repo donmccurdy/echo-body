@@ -3,6 +3,7 @@
 var pkg = require('./package.json'),
 	koa = require('koa'),
 	bodyParser = require('koa-body'),
+	buddy = require('co-body'),
 	program = require('commander'),
 	chalk = require('chalk');
 
@@ -15,11 +16,12 @@ program
 
 // Launch echo server.
 koa()
-	.use(bodyParser({multipart: true}))
+//	.use(bodyParser({multipart: true}))
 	.use(function *() {
 		console.log(chalk.green('Request to %s'), this.request.header.host + this.request.url);
 		console.log(chalk.yellow(' - Method: ') + this.request.method);
-		console.log(chalk.yellow(' - Body: ') + JSON.stringify(this.request.body, null, 2));
+		var body = yield buddy.text(this, {encoding: 'utf-8', limit: '56kb'});
+		console.log(chalk.yellow(' - Body: ') + body);
 		this.status = 200;
 	})
 	.listen(program.port);
